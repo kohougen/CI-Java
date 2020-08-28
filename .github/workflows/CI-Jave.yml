@@ -10,9 +10,12 @@ jobs:
     name: A job to run checkstyle
     runs-on: ubuntu-latest
     steps:
-      -uses: kohougen/CheckStyle-Action@master
-       with:
-         checkstyle_config: google_checks.xml
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run check style
+        uses: kohougen/CheckStyle-Action@master
+        with:
+          checkstyle_config: google_checks.xml
 
 # jobs:
 #   build:
